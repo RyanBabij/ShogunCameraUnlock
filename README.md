@@ -12,7 +12,7 @@ Each limit has a hard and soft limit. The hard limit will abruptly stop the came
 
 These values will reset between battles so you should keep them active.
 
-##Unlock down tilt
+## Unlock down tilt
 
 This one is hardcoded so you have to change the assembly itself rather than a variable. There are 2 values to edit:
 
@@ -21,7 +21,7 @@ This one is hardcoded so you have to change the assembly itself rather than a va
 
 Default values are 00000400. You can set them to 00000580 to increase down tilt with minimal glitches. If you increase the down tilt further the black bar at the top will disappear. However this isn't a major problem. You might want to set it to something like 00000800 for plenty of tilt. You will need more tilt if you take the camera up higher.
 
-##Miscellaneous
+## Miscellaneous
 
 Some other stuff I found:
 
@@ -32,7 +32,7 @@ Some other stuff I found:
 
 I might also see if I can unlock the up/down tilt a little bit. I am hoping to do the same for Medieval Total War in the future.
 
-##Assembly code for reference (camera height)
+## Assembly code for reference (camera height)
 
 Here's the relevant section of assembly code, from 0047BA50 to 0047BF28.
 
@@ -376,7 +376,7 @@ ShogunM.exe+7BF27 - 5B                    - pop ebx
 ShogunM.exe+7BF28 - C3                    - ret 
 ```
 
-##Assembly code for reference (camera tilt)
+## Assembly code for reference (camera tilt)
 
 Here's the relevant section of assembly code, from 0047B2EF to 0047B392.
 
