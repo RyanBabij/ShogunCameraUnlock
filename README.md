@@ -7,6 +7,8 @@ I have also included a Cheat Engine save in the repo. Just install cheat engine,
 
 In the future I might attempt to also unlock the camera for Medieval Total War.
 
+![Screenshot of enhanced camera](https://raw.githubusercontent.com/RyanBabij/ShogunCameraUnlock/refs/heads/main/sample-output.jpg)
+
 ## Unlock camera height
 
 Each limit has a hard and soft limit. The hard limit will abruptly stop the camera. The soft limit will slowly rebound it back to the limit. You need to change both to unlock the camera.
