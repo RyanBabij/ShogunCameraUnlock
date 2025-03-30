@@ -3,6 +3,8 @@ Improve camera height limits and tilt for the original Shogun Total War game.
 
 Here are the memory addresses to unlock the camera for Shogun Total War, so you can go lower down and further up. This is for the Steam version.
 
+In the future I might attempt to also unlock the camera for Medieval Total War.
+
 ## Unlock camera height
 
 Each limit has a hard and soft limit. The hard limit will abruptly stop the camera. The soft limit will slowly rebound it back to the limit. You need to change both to unlock the camera.
@@ -29,8 +31,6 @@ Some other stuff I found:
 00B7D2D4 - 4 bytes unsigned. Camera tilt. 0 = Horizon.\
 00B7D2D8 - 4 bytes unsigned. Camera rotation.\
 00B7D2C8, 00B7D2CC - 4 bytes unsigned. Camera positions x,y.
-
-I might also see if I can unlock the up/down tilt a little bit. I am hoping to do the same for Medieval Total War in the future.
 
 ## Assembly code for reference (camera height)
 
