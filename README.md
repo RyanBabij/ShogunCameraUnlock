@@ -3,6 +3,8 @@ Improve camera height limits and tilt for the original Shogun Total War game.
 
 Here are the memory addresses to unlock the camera for Shogun Total War, so you can go lower down and further up. This is for the Steam version.
 
+I have also included a Cheat Engine save in the repo. Just install cheat engine, load that save, link with the game exe, and you should be good to go.
+
 In the future I might attempt to also unlock the camera for Medieval Total War.
 
 ## Unlock camera height
