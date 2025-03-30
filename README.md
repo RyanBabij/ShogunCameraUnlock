@@ -1,5 +1,5 @@
 # Better Shogun Total War Camera (Steam edition)
-Improve camera height limits and tilt for the original Shogun Total War game.
+Improve camera height limits and tilt for the original Shogun Total War game. This has only been tested on the Steam edition.
 
 Here are the memory addresses to unlock the camera for Shogun Total War, so you can go lower down and further up. This is for the Steam version.
 
