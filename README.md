@@ -3,7 +3,7 @@ Unlock the camera height for Shogun Total War
 
 Here are the memory addresses to unlock the camera for Shogun Total War, so you can go lower down and further up. This is for the Steam version.
 
-00DD78E0, 00DD78DC - Camera upper height limit. 2 byte signed. Default value -1000. Set to something like -2000 for higher camera limit.
+00DD78E0, 00DD78DC - Camera upper height limit. 2 byte signed. Default value -1000. Set to something like -2000 for higher camera limit.\
 00A85A68, 00A85A54 - Camera lower height limit. 2 byte signed. Default value -500. Set to something like -100 to go closer to the ground.
 
 Some other stuff I found:
