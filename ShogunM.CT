@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="46">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>16</ID>
+      <Description>"Upper height 1. Set active"</Description>
+      <ShowAsSigned>1</ShowAsSigned>
+      <VariableType>2 Bytes</VariableType>
+      <Address>00DD78E0</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>20</ID>
+      <Description>"Upper height 2. Set active"</Description>
+      <ShowAsSigned>1</ShowAsSigned>
+      <VariableType>2 Bytes</VariableType>
+      <Address>00DD78DC</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>1</ID>
+      <Description>"Rotation"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>4 Bytes</VariableType>
+      <Address>00B7D2D8</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>3</ID>
+      <Description>"Tilt. 0 = horizon"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>4 Bytes</VariableType>
+      <Address>00B7D2D4</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>5</ID>
+      <Description>"Map position y"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>4 Bytes</VariableType>
+      <Address>00B7D2CC</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>4</ID>
+      <Description>"Map position x"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>4 Bytes</VariableType>
+      <Address>00B7D2C8</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>21</ID>
+      <Description>"Lower height 1. Set active"</Description>
+      <ShowAsSigned>1</ShowAsSigned>
+      <VariableType>2 Bytes</VariableType>
+      <Address>00A85A68</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>14</ID>
+      <Description>"Lower height 2. Set active"</Description>
+      <ShowAsSigned>1</ShowAsSigned>
+      <VariableType>2 Bytes</VariableType>
+      <Address>00A85A54</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>8</ID>
+      <Description>"Camera height"</Description>
+      <ShowAsSigned>1</ShowAsSigned>
+      <VariableType>2 Bytes</VariableType>
+      <Address>00A85A40</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>22</ID>
+      <Description>"Tilt limit 1 (default 1024. 1400 max glitchless)"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>2 Bytes</VariableType>
+      <Address>0047B2F6</Address>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>23</ID>
+      <Description>"Tilt limit 2"</Description>
+      <ShowAsSigned>0</ShowAsSigned>
+      <VariableType>2 Bytes</VariableType>
+      <Address>0047B309</Address>
+    </CheatEntry>
+  </CheatEntries>
+  <CheatCodes>
+    <CodeEntry>
+      <Description>Change of je ShogunM.exe+7B493</Description>
+      <AddressString>ShogunM.exe+7B3F4</AddressString>
+      <Before>
+        <Byte>8A</Byte>
+        <Byte>55</Byte>
+        <Byte>18</Byte>
+        <Byte>84</Byte>
+        <Byte>D2</Byte>
+      </Before>
+      <Actual>
+        <Byte>0F</Byte>
+        <Byte>84</Byte>
+        <Byte>99</Byte>
+        <Byte>00</Byte>
+        <Byte>00</Byte>
+        <Byte>00</Byte>
+      </Actual>
+      <After>
+        <Byte>8B</Byte>
+        <Byte>C8</Byte>
+        <Byte>81</Byte>
+        <Byte>E1</Byte>
+        <Byte>FF</Byte>
+      </After>
+    </CodeEntry>
+    <CodeEntry>
+      <Description>Change of call dword ptr [ShogunM.exe+31B2EC]</Description>
+      <AddressString>ShogunM.exe+7B495</AddressString>
+      <Before>
+        <Byte>42</Byte>
+        <Byte>2B</Byte>
+        <Byte>D8</Byte>
+        <Byte>6A</Byte>
+        <Byte>10</Byte>
+      </Before>
+      <Actual>
+        <Byte>FF</Byte>
+        <Byte>15</Byte>
+        <Byte>EC</Byte>
+        <Byte>B2</Byte>
+        <Byte>71</Byte>
+        <Byte>00</Byte>
+      </Actual>
+      <After>
+        <Byte>89</Byte>
+        <Byte>45</Byte>
+        <Byte>F4</Byte>
+        <Byte>6A</Byte>
+        <Byte>14</Byte>
+      </After>
+    </CodeEntry>
+  </CheatCodes>
+  <UserdefinedSymbols/>
+  <DisassemblerComments>
+    <DisassemblerComment>
+      <Address>"ShogunM.exe"+7B3F4</Address>
+      <Comment>call keyboard function?
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"ShogunM.exe"+7B495</Address>
+      <Comment>get asynchkey. Shift key pressed
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"ShogunM.exe"+7B4A0</Address>
+      <Comment>getkeystate caps lock
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"ShogunM.exe"+7B4D1</Address>
+      <Comment>asynchkey CTRL?
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"ShogunM.exe"+7B706</Address>
+      <Comment>Camera height?
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"ShogunM.exe"+7B8C7</Address>
+      <Comment>106 *************************
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"ShogunM.exe"+7B8CE</Address>
+      <Comment>clear ecx
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"ShogunM.exe"+7B8D0</Address>
+      <Comment>set ecx lower byte based on * keypress
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"ShogunM.exe"+7B8D4</Address>
+      <Comment>clear edx
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"ShogunM.exe"+7B8D6</Address>
+      <Comment>high bit check if key is down
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"ShogunM.exe"+7B8DC</Address>
+      <Comment>set dl to 0 or 1
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"ShogunM.exe"+7B8DF</Address>
+      <Comment>clear 5th bit
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"ShogunM.exe"+7B8E2</Address>
+      <Comment>set edx either 0 or 1
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"ShogunM.exe"+7B8E5</Address>
+      <Comment>move to 5th bit
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"ShogunM.exe"+7B8E8</Address>
+      <Comment>*** state of * in 5th bit eax
+</Comment>
+    </DisassemblerComment>
+    <DisassemblerComment>
+      <Address>"ShogunM.exe"+7B930</Address>
+      <Comment>*** eax key states into esp[0]
+</Comment>
+    </DisassemblerComment>
+  </DisassemblerComments>
+</CheatTable>
