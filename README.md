@@ -5,7 +5,7 @@ Here are the memory addresses to unlock the camera for Shogun Total War, so you 
 
 I have also included a Cheat Engine save in the repo. Just install cheat engine, load that save, link with the game exe, and you should be good to go.
 
-In the future I might attempt to also unlock the camera for Medieval Total War.
+There is also a version for Medieval Total War in my repo.
 
 ![Screenshot of enhanced camera](https://raw.githubusercontent.com/RyanBabij/ShogunCameraUnlock/refs/heads/main/sample-output.jpg)
 
