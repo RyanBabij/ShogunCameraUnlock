@@ -1,10 +1,27 @@
-# Shogun Camera Height Unlock
-Unlock the camera height for Shogun Total War
+# Better Shogun Total War Camera (Steam edition)
+Improve camera height limits and tilt for the original Shogun Total War game.
 
 Here are the memory addresses to unlock the camera for Shogun Total War, so you can go lower down and further up. This is for the Steam version.
 
+## Unlock camera height
+
+Each limit has a hard and soft limit. The hard limit will abruptly stop the camera. The soft limit will slowly rebound it back to the limit. You need to change both to unlock the camera.
+
 00DD78E0, 00DD78DC - Camera upper height limit. 2 byte signed. Default value -1000. Set to something like -2000 for higher camera limit.\
 00A85A68, 00A85A54 - Camera lower height limit. 2 byte signed. Default value -500. Set to something like -100 to go closer to the ground.
+
+These values will reset between battles so you should keep them active.
+
+##Unlock down tilt
+
+This one is hardcoded so you have to change the assembly itself rather than a variable. There are 2 values to edit:
+
+0047B2F5 - Will let you tilt down but will reset itself.\
+0047B308 - Will stop the tilt from resetting.
+
+Default values are 00000400. You can set them to 00000580 to increase down tilt with minimal glitches. If you increase the down tilt further the black bar at the top will disappear. However this isn't a major problem. You might want to set it to something like 00000800 for plenty of tilt. You will need more tilt if you take the camera up higher.
+
+##Miscellaneous
 
 Some other stuff I found:
 
@@ -14,6 +31,8 @@ Some other stuff I found:
 00B7D2C8, 00B7D2CC - 4 bytes unsigned. Camera positions x,y.
 
 I might also see if I can unlock the up/down tilt a little bit. I am hoping to do the same for Medieval Total War in the future.
+
+##Assembly code for reference (camera height)
 
 Here's the relevant section of assembly code, from 0047BA50 to 0047BF28.
 
@@ -355,4 +374,46 @@ ShogunM.exe+7BF24 - 5D                    - pop ebp
 ShogunM.exe+7BF25 - 8B E3                 - mov esp,ebx
 ShogunM.exe+7BF27 - 5B                    - pop ebx
 ShogunM.exe+7BF28 - C3                    - ret 
+```
+
+##Assembly code for reference (camera tilt)
+
+Here's the relevant section of assembly code, from 0047B2EF to 0047B392.
+
+```
+ShogunM.exe+7B2EF - 90                    - nop 
+ShogunM.exe+7B2F0 - A1 D4D2B700           - mov eax,[ShogunM.exe+77D2D4] { (1024) }
+ShogunM.exe+7B2F5 - 3D 00040000           - cmp eax,00000400 { 1024 }
+ShogunM.exe+7B2FA - 7E 20                 - jle ShogunM.exe+7B31C
+ShogunM.exe+7B2FC - 3D 00200000           - cmp eax,00002000 { 8192 }
+ShogunM.exe+7B301 - 7D 19                 - jnl ShogunM.exe+7B31C
+ShogunM.exe+7B303 - A1 E066EF00           - mov eax,[ShogunM.exe+AF66E0] { (16383) }
+ShogunM.exe+7B308 - 25 00040000           - and eax,00000400 { 1024 }
+ShogunM.exe+7B30D - A3 D4D2B700           - mov [ShogunM.exe+77D2D4],eax { (1024) }
+ShogunM.exe+7B312 - C7 05 0019C200 00000000 - mov [ShogunM.exe+821900],00000000 { (1),0 }
+ShogunM.exe+7B31C - 3D 003C0000           - cmp eax,00003C00 { 15360 }
+ShogunM.exe+7B321 - 7D 20                 - jnl ShogunM.exe+7B343
+ShogunM.exe+7B323 - 3D 00200000           - cmp eax,00002000 { 8192 }
+ShogunM.exe+7B328 - 7E 19                 - jle ShogunM.exe+7B343
+ShogunM.exe+7B32A - A1 E066EF00           - mov eax,[ShogunM.exe+AF66E0] { (16383) }
+ShogunM.exe+7B32F - 25 003C0000           - and eax,00003C00 { 15360 }
+ShogunM.exe+7B334 - A3 D4D2B700           - mov [ShogunM.exe+77D2D4],eax { (1024) }
+ShogunM.exe+7B339 - C7 05 0019C200 00000000 - mov [ShogunM.exe+821900],00000000 { (1),0 }
+ShogunM.exe+7B343 - A1 E878DD00           - mov eax,[ShogunM.exe+9D78E8] { (1024) }
+ShogunM.exe+7B348 - 3D 00040000           - cmp eax,00000400 { 1024 }
+ShogunM.exe+7B34D - 7E 20                 - jle ShogunM.exe+7B36F
+ShogunM.exe+7B34F - 3D 00200000           - cmp eax,00002000 { 8192 }
+ShogunM.exe+7B354 - 7D 19                 - jnl ShogunM.exe+7B36F
+ShogunM.exe+7B356 - B8 00040000           - mov eax,00000400 { 1024 }
+ShogunM.exe+7B35B - C7 05 E878DD00 00040000 - mov [ShogunM.exe+9D78E8],00000400 { (1024),1024 }
+ShogunM.exe+7B365 - C7 05 0019C200 00000000 - mov [ShogunM.exe+821900],00000000 { (1),0 }
+ShogunM.exe+7B36F - 3D 003C0000           - cmp eax,00003C00 { 15360 }
+ShogunM.exe+7B374 - 7D 1B                 - jnl ShogunM.exe+7B391
+ShogunM.exe+7B376 - 3D 00200000           - cmp eax,00002000 { 8192 }
+ShogunM.exe+7B37B - 7E 14                 - jle ShogunM.exe+7B391
+ShogunM.exe+7B37D - C7 05 E878DD00 003C0000 - mov [ShogunM.exe+9D78E8],00003C00 { (1024),15360 }
+ShogunM.exe+7B387 - C7 05 0019C200 00000000 - mov [ShogunM.exe+821900],00000000 { (1),0 }
+ShogunM.exe+7B391 - C3                    - ret 
+ShogunM.exe+7B392 - 8B F6                 - mov esi,esi
+ShogunM.exe+7B394 - 90                    - nop 
 ```
